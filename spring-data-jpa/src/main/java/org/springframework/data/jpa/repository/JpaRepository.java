@@ -130,9 +130,9 @@ public interface JpaRepository<T, ID> extends ListCrudRepository<T, ID>, ListPag
 
 	/**
 	 * Returns a reference to the entity with the given identifier. Depending on how the JPA persistence provider is
-	 * implemented this is very likely to always return an instance and throw an
-	 * {@link jakarta.persistence.EntityNotFoundException} on first access. Some of them will reject invalid identifiers
-	 * immediately.
+	 * implemented, this is very likely to always return an instance or, if the requested instance doesn't exist, throw
+	 * an {@link jakarta.persistence.EntityNotFoundException} on first access. Some of them will reject invalid
+	 * identifiers immediately.
 	 *
 	 * @param id must not be {@literal null}.
 	 * @return a reference to the entity with the given identifier.
